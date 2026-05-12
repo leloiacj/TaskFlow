@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TaskFlow.Data;
+using TaskFlow.Interfaces.Services;
+using TaskFlow.Services;
 using TaskFlow.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
+
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddControllers();
 
