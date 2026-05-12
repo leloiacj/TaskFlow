@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using TaskFlow.Data;
+using TaskFlow.Interfaces.Repositories;
 using TaskFlow.Interfaces.Services;
 using TaskFlow.Services;
 using TaskFlow.Settings;
@@ -49,6 +50,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthServices,  AuthService>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
 builder.Services.AddControllers();
 

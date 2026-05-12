@@ -24,7 +24,6 @@
 
     <ItemGroup>
       <Folder Include="DTOs\Tasks\" />
-      <Folder Include="Interfaces\Repositories\" />
       <Folder Include="Mappings\" />
       <Folder Include="Middleware\" />
       <Folder Include="Repositories\" />
