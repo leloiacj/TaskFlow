@@ -13,6 +13,7 @@ builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
 
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IAuthServices,  AuthService>();
 
 builder.Services.AddControllers();
 
