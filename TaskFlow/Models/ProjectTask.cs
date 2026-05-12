@@ -11,6 +11,6 @@ public class ProjectTask
     public DateTime CreatedAt { get; set; } =  DateTime.UtcNow;
     public int ProjectId { get; set; }
     public Project Project { get; set; } = null!;
-    public int? AssignedUserId { get; set; }
+    public Guid? AssignedUserId { get; set; }
     public AppUser?  AssignedUser { get; set; }
 }

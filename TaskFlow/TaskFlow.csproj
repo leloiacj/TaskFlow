@@ -7,6 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.15" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.15" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.15">
           <PrivateAssets>all</PrivateAssets>
@@ -22,7 +24,6 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
-      <Folder Include="DTOs\Auth\" />
       <Folder Include="DTOs\Projects\" />
       <Folder Include="DTOs\Tasks\" />
       <Folder Include="Interfaces\Repositories\" />
@@ -31,7 +32,6 @@
       <Folder Include="Middleware\" />
       <Folder Include="Repositories\" />
       <Folder Include="Services\" />
-      <Folder Include="Settings\" />
     </ItemGroup>
 
 </Project>
