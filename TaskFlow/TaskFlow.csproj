@@ -23,7 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
       <Folder Include="DTOs\Projects\" />
       <Folder Include="DTOs\Tasks\" />
       <Folder Include="Interfaces\Repositories\" />
