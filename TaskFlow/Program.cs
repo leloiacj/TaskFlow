@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using TaskFlow.Data;
 using TaskFlow.Interfaces.Repositories;
 using TaskFlow.Interfaces.Services;
+using TaskFlow.Repositories;
 using TaskFlow.Services;
 using TaskFlow.Settings;
 
@@ -52,6 +53,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthServices,  AuthService>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
 builder.Services.AddControllers();
 

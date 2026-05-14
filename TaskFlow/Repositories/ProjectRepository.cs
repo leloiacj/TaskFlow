@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaskFlow.Data;
+using TaskFlow.Interfaces.Repositories;
 using TaskFlow.Models;
 
-namespace TaskFlow.Interfaces.Repositories;
+namespace TaskFlow.Repositories;
 
 public class ProjectRepository : IProjectRepository
 {
