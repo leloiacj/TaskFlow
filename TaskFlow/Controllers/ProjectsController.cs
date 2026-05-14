@@ -10,11 +10,11 @@ namespace TaskFlow.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Authorize]
-public class ProjectsControllers : ControllerBase
+public class ProjectsController : ControllerBase
 {
     private readonly IProjectService _projectService;
     
-    public  ProjectsControllers(IProjectService projectService)
+    public  ProjectsController(IProjectService projectService)
     {
         _projectService = projectService;
     }

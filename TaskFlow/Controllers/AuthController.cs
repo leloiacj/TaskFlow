@@ -6,11 +6,11 @@ namespace TaskFlow.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthControllers : ControllerBase
+public class AuthController : ControllerBase
 {
     private readonly IAuthServices _authServices;
     
-    public AuthControllers(IAuthServices authServices)
+    public AuthController(IAuthServices authServices)
     {
         _authServices = authServices;
     }
