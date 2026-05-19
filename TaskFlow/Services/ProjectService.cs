@@ -37,6 +37,12 @@ public class ProjectService : IProjectService
 
     public async Task<ProjectResponse> CreateAsync(CreateProjectRequest request, Guid ownerId)
     {
+
+        if (string.IsNullOrWhiteSpace(request.Name))
+        {
+            throw new ArgumentException("Project name is required");
+        }
+        
         var project = new Project
         {
             Name = request.Name.Trim(),
@@ -53,6 +59,11 @@ public class ProjectService : IProjectService
 
     public async Task<ProjectResponse> UpdateAsync(int projectId, UpdateProjectRequest request, Guid ownerId)
     {
+        if (string.IsNullOrWhiteSpace(request.Name))
+        {
+            throw new ArgumentException("Project name is required");
+        }
+        
         var project = await _projectRepository.GetByIdAndOwnerIdAsync(projectId, ownerId);
 
         if (project is null)

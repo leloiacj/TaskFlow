@@ -55,6 +55,16 @@ public class TaskService : ITaskService
 
     public async Task<TaskResponse> CreateAsync(CreateTaskRequest request, Guid ownerId)
     {
+        if (string.IsNullOrWhiteSpace(request.Title))
+        {
+            throw new ArgumentException("Title is required");
+        }
+        
+        if (request.ProjectId <= 0)
+        {
+            throw new ArgumentException("ProjectId must be greater than zero");
+        }
+        
         var project = await _projectRepository.GetByIdAndOwnerIdAsync(request.ProjectId, ownerId);
 
         if (project is null)
@@ -95,6 +105,11 @@ public class TaskService : ITaskService
 
     public async Task<TaskResponse> UpdateAsync(int taskId, UpdateTaskRequest request, Guid ownerId)
     {
+        if (string.IsNullOrWhiteSpace(request.Title))
+        {
+            throw new ArgumentException("Title is required");
+        }
+        
         var task = await _taskRepository.GetByIdAndOwnerIdAsync(taskId, ownerId);
 
         if (task is null)
