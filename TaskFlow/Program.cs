@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using TaskFlow.Data;
 using TaskFlow.Interfaces.Repositories;
 using TaskFlow.Interfaces.Services;
+using TaskFlow.Middleware;
 using TaskFlow.Repositories;
 using TaskFlow.Services;
 using TaskFlow.Settings;
@@ -96,6 +97,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
